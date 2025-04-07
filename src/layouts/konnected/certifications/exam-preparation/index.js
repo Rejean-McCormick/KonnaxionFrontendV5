@@ -48,7 +48,7 @@ function Dashboardk() {
               <ComplexStatisticsCard
                 color="dark"
                 icon="weekend"
-                title="Bookingz"
+                title="BookingEP"
                 count={281}
                 percentage={{
                   color: "success",

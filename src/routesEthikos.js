@@ -3,6 +3,27 @@
 import React from "react";
 import Icon from "@mui/material/Icon";
 
+// Dashboard & Insights components
+import RealTimeOverview from "layouts/ethikos/dashboard-insights/real-time-overview";
+import TrendsAnalytics from "layouts/ethikos/dashboard-insights/trends-analytics";
+import ParticipationMetrics from "layouts/ethikos/dashboard-insights/participation-metrics";
+
+// Debates & Forums components
+import ActiveDebates from "layouts/ethikos/debates-forums/active-debates";
+import StartNewDebate from "layouts/ethikos/debates-forums/start-new-debate";
+import FeaturedPinnedTopics from "layouts/ethikos/debates-forums/featured-pinned-topics";
+import CommunityGuidelines from "layouts/ethikos/debates-forums/community-guidelines";
+
+// Smart Voting components
+import ActiveVotes from "layouts/ethikos/smart-voting/active-votes";
+import VotingHistory from "layouts/ethikos/smart-voting/voting-history";
+import HowSmartVoteWorks from "layouts/ethikos/smart-voting/how-smart-vote-works";
+
+// Reputation & Badges components
+import MyProfile from "layouts/ethikos/reputation-badges/my-profile";
+import ManageExpertise from "layouts/ethikos/reputation-badges/manage-expertise";
+import MyBadgesAchievements from "layouts/ethikos/reputation-badges/my-badges-achievements";
+
 const routes = [
   {
     type: "collapse",
@@ -14,22 +35,22 @@ const routes = [
         type: "collapse",
         name: "Real-time Overview",
         key: "real-time-overview",
-        route: "/ethikos/dashboard/real-time-overview",
-        component: <div>Real-time Overview</div>,
+        route: "/ethikos/dashboard-insights/real-time-overview",
+        component: <RealTimeOverview />,
       },
       {
         type: "collapse",
         name: "Trends & Analytics",
         key: "trends-analytics",
-        route: "/ethikos/dashboard/trends-analytics",
-        component: <div>Trends & Analytics</div>,
+        route: "/ethikos/dashboard-insights/trends-analytics",
+        component: <TrendsAnalytics />,
       },
       {
         type: "collapse",
         name: "Participation Metrics",
         key: "participation-metrics",
-        route: "/ethikos/dashboard/participation-metrics",
-        component: <div>Participation Metrics</div>,
+        route: "/ethikos/dashboard-insights/participation-metrics",
+        component: <ParticipationMetrics />,
       },
     ],
     sidebar: true,
@@ -44,29 +65,29 @@ const routes = [
         type: "collapse",
         name: "Active Debates",
         key: "active-debates",
-        route: "/ethikos/debates/active-debates",
-        component: <div>Active Debates</div>,
+        route: "/ethikos/debates-forums/active-debates",
+        component: <ActiveDebates />,
       },
       {
         type: "collapse",
         name: "Start New Debate",
         key: "start-new-debate",
-        route: "/ethikos/debates/start-new-debate",
-        component: <div>Start New Debate</div>,
+        route: "/ethikos/debates-forums/start-new-debate",
+        component: <StartNewDebate />,
       },
       {
         type: "collapse",
         name: "Featured/Pinned Topics",
-        key: "featured-topics",
-        route: "/ethikos/debates/featured-topics",
-        component: <div>Featured/Pinned Topics</div>,
+        key: "featured-pinned-topics",
+        route: "/ethikos/debates-forums/featured-pinned-topics",
+        component: <FeaturedPinnedTopics />,
       },
       {
         type: "collapse",
         name: "Community Guidelines",
         key: "community-guidelines",
-        route: "/ethikos/debates/community-guidelines",
-        component: <div>Community Guidelines</div>,
+        route: "/ethikos/debates-forums/community-guidelines",
+        component: <CommunityGuidelines />,
       },
     ],
     sidebar: true,
@@ -81,22 +102,22 @@ const routes = [
         type: "collapse",
         name: "Active Votes",
         key: "active-votes",
-        route: "/ethikos/voting/active-votes",
-        component: <div>Active Votes</div>,
+        route: "/ethikos/smart-voting/active-votes",
+        component: <ActiveVotes />,
       },
       {
         type: "collapse",
         name: "Voting History",
         key: "voting-history",
-        route: "/ethikos/voting/voting-history",
-        component: <div>Voting History</div>,
+        route: "/ethikos/smart-voting/voting-history",
+        component: <VotingHistory />,
       },
       {
         type: "collapse",
         name: "How Smart Vote Works",
         key: "how-smart-vote-works",
-        route: "/ethikos/voting/how-it-works",
-        component: <div>How Smart Vote Works</div>,
+        route: "/ethikos/smart-voting/how-smart-vote-works",
+        component: <HowSmartVoteWorks />,
       },
     ],
     sidebar: true,
@@ -111,22 +132,22 @@ const routes = [
         type: "collapse",
         name: "My Profile",
         key: "my-profile",
-        route: "/ethikos/reputation/my-profile",
-        component: <div>My Profile</div>,
+        route: "/ethikos/reputation-badges/my-profile",
+        component: <MyProfile />,
       },
       {
         type: "collapse",
         name: "Manage Expertise",
         key: "manage-expertise",
-        route: "/ethikos/reputation/manage-expertise",
-        component: <div>Manage Expertise</div>,
+        route: "/ethikos/reputation-badges/manage-expertise",
+        component: <ManageExpertise />,
       },
       {
         type: "collapse",
         name: "My Badges & Achievements",
         key: "my-badges-achievements",
-        route: "/ethikos/reputation/my-badges",
-        component: <div>My Badges & Achievements</div>,
+        route: "/ethikos/reputation-badges/my-badges-achievements",
+        component: <MyBadgesAchievements />,
       },
     ],
     sidebar: true,

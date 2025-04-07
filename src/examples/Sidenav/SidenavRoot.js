@@ -1,92 +1,58 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
+// In your Sidenav rendering (e.g., in SidenavRoot.js)
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+import CustomSidenavCollapse from "components/CustomSidenavCollapse"; // adjust the path as needed
 
-Coded by www.creative-tim.com
+const renderRoutes = routes.map((routeObj) => {
+  const { type, name, icon, title, noCollapse, key, href, route, collapse } = routeObj;
+  let returnValue;
 
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// @mui material components
-import Drawer from "@mui/material/Drawer";
-import { styled } from "@mui/material/styles";
-
-export default styled(Drawer)(({ theme, ownerState }) => {
-  const { palette, boxShadows, transitions, breakpoints, functions } = theme;
-  const { transparentSidenav, whiteSidenav, miniSidenav, darkMode } = ownerState;
-
-  const sidebarWidth = 250;
-  const { transparent, gradients, white, background } = palette;
-  const { xxl } = boxShadows;
-  const { pxToRem, linearGradient } = functions;
-
-  let backgroundValue = darkMode
-    ? background.sidenav
-    : linearGradient(gradients.dark.main, gradients.dark.state);
-
-  if (transparentSidenav) {
-    backgroundValue = transparent.main;
-  } else if (whiteSidenav) {
-    backgroundValue = white.main;
+  if (type === "collapse") {
+    if (collapse) {
+      // Use the custom collapsible component if the route has children
+      returnValue = (
+        <CustomSidenavCollapse key={key} icon={icon} name={name} collapse={collapse} activeKey={key} />
+      );
+    } else if (href) {
+      returnValue = (
+        <Link href={href} key={key} target="_blank" rel="noreferrer" sx={{ textDecoration: "none" }}>
+          <SidenavCollapse name={name} icon={icon} active={key === collapseName} noCollapse={noCollapse} />
+        </Link>
+      );
+    } else {
+      returnValue = (
+        <NavLink key={key} to={route}>
+          <SidenavCollapse name={name} icon={icon} active={key === collapseName} noCollapse={noCollapse} />
+        </NavLink>
+      );
+    }
+  } else if (type === "title") {
+    // Render title items
+    returnValue = (
+      <MDTypography
+        key={key}
+        color={textColor}
+        display="block"
+        variant="caption"
+        fontWeight="bold"
+        textTransform="uppercase"
+        pl={3}
+        mt={2}
+        mb={1}
+        ml={1}
+      >
+        {title}
+      </MDTypography>
+    );
+  } else if (type === "divider") {
+    returnValue = (
+      <Divider
+        key={key}
+        light={
+          (!darkMode && !whiteSidenav && !transparentSidenav) ||
+          (darkMode && !transparentSidenav && whiteSidenav)
+        }
+      />
+    );
   }
-
-  // styles for the sidenav when miniSidenav={false}
-  const drawerOpenStyles = () => ({
-    background: backgroundValue,
-    transform: "translateX(0)",
-    transition: transitions.create("transform", {
-      easing: transitions.easing.sharp,
-      duration: transitions.duration.shorter,
-    }),
-
-    [breakpoints.up("xl")]: {
-      boxShadow: transparentSidenav ? "none" : xxl,
-      marginBottom: transparentSidenav ? 0 : "inherit",
-      left: "0",
-      width: sidebarWidth,
-      transform: "translateX(0)",
-      transition: transitions.create(["width", "background-color"], {
-        easing: transitions.easing.sharp,
-        duration: transitions.duration.enteringScreen,
-      }),
-    },
-  });
-
-  // styles for the sidenav when miniSidenav={true}
-  const drawerCloseStyles = () => ({
-    background: backgroundValue,
-    transform: `translateX(${pxToRem(-320)})`,
-    transition: transitions.create("transform", {
-      easing: transitions.easing.sharp,
-      duration: transitions.duration.shorter,
-    }),
-
-    [breakpoints.up("xl")]: {
-      boxShadow: transparentSidenav ? "none" : xxl,
-      marginBottom: transparentSidenav ? 0 : "inherit",
-      left: "0",
-      width: pxToRem(96),
-      overflowX: "hidden",
-      transform: "translateX(0)",
-      transition: transitions.create(["width", "background-color"], {
-        easing: transitions.easing.sharp,
-        duration: transitions.duration.shorter,
-      }),
-    },
-  });
-
-  return {
-    "& .MuiDrawer-paper": {
-      boxShadow: xxl,
-      border: "none",
-
-      ...(miniSidenav ? drawerCloseStyles() : drawerOpenStyles()),
-    },
-  };
+  return returnValue;
 });
