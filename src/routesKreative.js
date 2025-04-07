@@ -27,7 +27,7 @@ import TopCreators from "layouts/kreative/community-showcases/top-creators";
 import SubmitToShowcase from "layouts/kreative/community-showcases/submit-to-showcase";
 
 const routes = [
-  // Dashboard (direct link)
+  // Direct link to Dashboard
   {
     type: "collapse",
     name: "Dashboard",
@@ -38,128 +38,128 @@ const routes = [
     sidebar: true,
     noCollapse: true,
   },
-  // Creative Hub
+  // Creative Hub Group Label
+  {
+    type: "title",
+    title: "Creative Hub",
+    key: "creative-hub-title",
+  },
+  // Creative Hub Items
   {
     type: "collapse",
-    name: "Creative Hub",
-    key: "creative-hub",
-    icon: <Icon fontSize="small">lightbulb</Icon>,
-    collapse: [
-      {
-        type: "collapse",
-        name: "Explore Ideas",
-        key: "explore-ideas",
-        route: "/kreative/creative-hub/explore-ideas",
-        component: <ExploreIdeas />,
-      },
-      {
-        type: "collapse",
-        name: "Inspiration Gallery",
-        key: "inspiration-gallery",
-        route: "/kreative/creative-hub/inspiration-gallery",
-        component: <InspirationGallery />,
-      },
-      {
-        type: "collapse",
-        name: "Submit Creative Work",
-        key: "submit-creative-work",
-        route: "/kreative/creative-hub/submit-creative-work",
-        component: <SubmitCreativeWork />,
-      },
-    ],
+    name: "Explore Ideas",
+    key: "explore-ideas",
+    route: "/kreative/creative-hub/explore-ideas",
+    component: <ExploreIdeas />,
     sidebar: true,
   },
-  // Idea Incubator
   {
     type: "collapse",
-    name: "Idea Incubator",
-    key: "idea-incubator",
-    icon: <Icon fontSize="small">emoji_objects</Icon>,
-    collapse: [
-      {
-        type: "collapse",
-        name: "My Ideas",
-        key: "my-ideas",
-        route: "/kreative/idea-incubator/my-ideas",
-        component: <MyIdeas />,
-      },
-      {
-        type: "collapse",
-        name: "Create New Idea",
-        key: "create-new-idea",
-        route: "/kreative/idea-incubator/create-new-idea",
-        component: <CreateNewIdea />,
-      },
-      {
-        type: "collapse",
-        name: "Collaborate on Ideas",
-        key: "collaborate-on-ideas",
-        route: "/kreative/idea-incubator/collaborate-on-ideas",
-        component: <CollaborateOnIdeas />,
-      },
-    ],
+    name: "Inspiration Gallery",
+    key: "inspiration-gallery",
+    route: "/kreative/creative-hub/inspiration-gallery",
+    component: <InspirationGallery />,
     sidebar: true,
   },
-  // Collaborative Spaces
   {
     type: "collapse",
-    name: "Collaborative Spaces",
-    key: "collaborative-spaces",
-    icon: <Icon fontSize="small">group_work</Icon>,
-    collapse: [
-      {
-        type: "collapse",
-        name: "My Spaces",
-        key: "my-spaces",
-        route: "/kreative/collaborative-spaces/my-spaces",
-        component: <MySpaces />,
-      },
-      {
-        type: "collapse",
-        name: "Find Spaces",
-        key: "find-spaces",
-        route: "/kreative/collaborative-spaces/find-spaces",
-        component: <FindSpaces />,
-      },
-      {
-        type: "collapse",
-        name: "Start a New Space",
-        key: "start-new-space",
-        route: "/kreative/collaborative-spaces/start-new-space",
-        component: <StartNewSpace />,
-      },
-    ],
+    name: "Submit Creative Work",
+    key: "submit-creative-work",
+    route: "/kreative/creative-hub/submit-creative-work",
+    component: <SubmitCreativeWork />,
     sidebar: true,
   },
-  // Community Showcases
+  // Idea Incubator Group Label
+  {
+    type: "title",
+    title: "Idea Incubator",
+    key: "idea-incubator-title",
+  },
+  // Idea Incubator Items
   {
     type: "collapse",
-    name: "Community Showcases",
-    key: "community-showcases",
-    icon: <Icon fontSize="small">collections</Icon>,
-    collapse: [
-      {
-        type: "collapse",
-        name: "Featured Projects",
-        key: "featured-projects",
-        route: "/kreative/community-showcases/featured-projects",
-        component: <FeaturedProjects />,
-      },
-      {
-        type: "collapse",
-        name: "Top Creators",
-        key: "top-creators",
-        route: "/kreative/community-showcases/top-creators",
-        component: <TopCreators />,
-      },
-      {
-        type: "collapse",
-        name: "Submit to Showcase",
-        key: "submit-to-showcase",
-        route: "/kreative/community-showcases/submit-to-showcase",
-        component: <SubmitToShowcase />,
-      },
-    ],
+    name: "My Ideas",
+    key: "my-ideas",
+    route: "/kreative/idea-incubator/my-ideas",
+    component: <MyIdeas />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Create New Idea",
+    key: "create-new-idea",
+    route: "/kreative/idea-incubator/create-new-idea",
+    component: <CreateNewIdea />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Collaborate on Ideas",
+    key: "collaborate-on-ideas",
+    route: "/kreative/idea-incubator/collaborate-on-ideas",
+    component: <CollaborateOnIdeas />,
+    sidebar: true,
+  },
+  // Collaborative Spaces Group Label
+  {
+    type: "title",
+    title: "Collaborative Spaces",
+    key: "collaborative-spaces-title",
+  },
+  // Collaborative Spaces Items
+  {
+    type: "collapse",
+    name: "My Spaces",
+    key: "my-spaces",
+    route: "/kreative/collaborative-spaces/my-spaces",
+    component: <MySpaces />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Find Spaces",
+    key: "find-spaces",
+    route: "/kreative/collaborative-spaces/find-spaces",
+    component: <FindSpaces />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Start a New Space",
+    key: "start-new-space",
+    route: "/kreative/collaborative-spaces/start-new-space",
+    component: <StartNewSpace />,
+    sidebar: true,
+  },
+  // Community Showcases Group Label
+  {
+    type: "title",
+    title: "Community Showcases",
+    key: "community-showcases-title",
+  },
+  // Community Showcases Items
+  {
+    type: "collapse",
+    name: "Featured Projects",
+    key: "featured-projects",
+    route: "/kreative/community-showcases/featured-projects",
+    component: <FeaturedProjects />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Top Creators",
+    key: "top-creators",
+    route: "/kreative/community-showcases/top-creators",
+    component: <TopCreators />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Submit to Showcase",
+    key: "submit-to-showcase",
+    route: "/kreative/community-showcases/submit-to-showcase",
+    component: <SubmitToShowcase />,
     sidebar: true,
   },
 ];

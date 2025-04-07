@@ -49,210 +49,206 @@ const routes = [
     sidebar: true,
     noCollapse: true,
   },
-  // Projects & Collaboration
+  // Projects & Collaboration Group Label
+  {
+    type: "title",
+    title: "Projects & Collaboration",
+    key: "projects-collaboration-title",
+  },
+  // Projects & Collaboration Items
   {
     type: "collapse",
-    name: "Projects & Collaboration",
-    key: "projects-collaboration",
-    icon: <Icon fontSize="small">group</Icon>,
-    route: "#", // Non-navigable label; toggles child items
-    collapse: [
-      {
-        type: "collapse",
-        name: "My Projects",
-        key: "my-projects",
-        route: "/keenkonnect/projects/my-projects",
-        component: <MyProjects />,
-      },
-      {
-        type: "collapse",
-        name: "Browse Projects",
-        key: "browse-projects",
-        route: "/keenkonnect/projects/browse-projects",
-        component: <BrowseProjects />,
-      },
-      {
-        type: "collapse",
-        name: "Create New Project",
-        key: "create-new-project",
-        route: "/keenkonnect/projects/create-new-project",
-        component: <CreateNewProject />,
-      },
-      {
-        type: "collapse",
-        name: "Project Workspace",
-        key: "project-workspace",
-        route: "/keenkonnect/projects/project-workspace",
-        component: <ProjectWorkspace />,
-      },
-    ],
+    name: "My Projects",
+    key: "my-projects",
+    route: "/keenkonnect/projects/my-projects",
+    component: <MyProjects />,
     sidebar: true,
   },
-  // Knowledge Repository
   {
     type: "collapse",
-    name: "Knowledge Repository",
-    key: "knowledge-repository",
-    icon: <Icon fontSize="small">book</Icon>,
-    route: "#", // Label only
-    collapse: [
-      {
-        type: "collapse",
-        name: "Browse Repository",
-        key: "browse-repository",
-        route: "/keenkonnect/knowledge/browse-repository",
-        component: <BrowseRepository />,
-      },
-      {
-        type: "collapse",
-        name: "Search & Filter Documents",
-        key: "search-filter-documents",
-        route: "/keenkonnect/knowledge/search-filter-documents",
-        component: <SearchFilterDocuments />,
-      },
-      {
-        type: "collapse",
-        name: "Upload New Document",
-        key: "upload-new-document",
-        route: "/keenkonnect/knowledge/upload-new-document",
-        component: <UploadNewDocument />,
-      },
-      {
-        type: "collapse",
-        name: "Document Management",
-        key: "document-management",
-        route: "/keenkonnect/knowledge/document-management",
-        component: <DocumentManagement />,
-      },
-    ],
+    name: "Browse Projects",
+    key: "browse-projects",
+    route: "/keenkonnect/projects/browse-projects",
+    component: <BrowseProjects />,
     sidebar: true,
   },
-  // AI Team Matching
   {
     type: "collapse",
-    name: "AI Team Matching",
-    key: "ai-team-matching",
-    icon: <Icon fontSize="small">memory</Icon>,
-    route: "#", // Label only
-    collapse: [
-      {
-        type: "collapse",
-        name: "Find Teams",
-        key: "find-teams",
-        route: "/keenkonnect/ai-team-matching/find-teams",
-        component: <FindTeams />,
-      },
-      {
-        type: "collapse",
-        name: "My Matches",
-        key: "my-matches",
-        route: "/keenkonnect/ai-team-matching/my-matches",
-        component: <MyMatches />,
-      },
-      {
-        type: "collapse",
-        name: "Match Preferences",
-        key: "match-preferences",
-        route: "/keenkonnect/ai-team-matching/match-preferences",
-        component: <MatchPreferences />,
-      },
-    ],
+    name: "Create New Project",
+    key: "create-new-project",
+    route: "/keenkonnect/projects/create-new-project",
+    component: <CreateNewProject />,
     sidebar: true,
   },
-  // Interactive Workspaces
   {
     type: "collapse",
-    name: "Interactive Workspaces",
-    key: "interactive-workspaces",
-    icon: <Icon fontSize="small">desktop_windows</Icon>,
-    route: "#", // Label only
-    collapse: [
-      {
-        type: "collapse",
-        name: "My Workspaces",
-        key: "my-workspaces",
-        route: "/keenkonnect/workspaces/my-workspaces",
-        component: <MyWorkspaces />,
-      },
-      {
-        type: "collapse",
-        name: "Browse Available Workspaces",
-        key: "browse-workspaces",
-        route: "/keenkonnect/workspaces/browse-available-workspaces",
-        component: <BrowseAvailableWorkspaces />,
-      },
-      {
-        type: "collapse",
-        name: "Launch New Workspace",
-        key: "launch-new-workspace",
-        route: "/keenkonnect/workspaces/launch-new-workspace",
-        component: <LaunchNewWorkspace />,
-      },
-    ],
+    name: "Project Workspace",
+    key: "project-workspace",
+    route: "/keenkonnect/projects/project-workspace",
+    component: <ProjectWorkspace />,
     sidebar: true,
   },
-  // Sustainability & Impact
+  // Knowledge Repository Group Label
+  {
+    type: "title",
+    title: "Knowledge Repository",
+    key: "knowledge-repository-title",
+  },
+  // Knowledge Repository Items
   {
     type: "collapse",
-    name: "Sustainability & Impact",
-    key: "sustainability-impact",
-    icon: <Icon fontSize="small">eco</Icon>,
-    route: "#", // Label only
-    collapse: [
-      {
-        type: "collapse",
-        name: "Track Project Impact",
-        key: "track-project-impact",
-        route: "/keenkonnect/sustainability-impact/track-project-impact",
-        component: <TrackProjectImpact />,
-      },
-      {
-        type: "collapse",
-        name: "Sustainability Dashboard",
-        key: "sustainability-dashboard",
-        route: "/keenkonnect/sustainability-impact/sustainability-dashboard",
-        component: <SustainabilityDashboard />,
-      },
-      {
-        type: "collapse",
-        name: "Submit Impact Reports",
-        key: "submit-impact-reports",
-        route: "/keenkonnect/sustainability-impact/submit-impact-reports",
-        component: <SubmitImpactReports />,
-      },
-    ],
+    name: "Browse Repository",
+    key: "browse-repository",
+    route: "/keenkonnect/knowledge/browse-repository",
+    component: <BrowseRepository />,
     sidebar: true,
   },
-  // User Reputation & Settings
   {
     type: "collapse",
-    name: "User Reputation & Settings",
-    key: "user-reputation-settings",
-    icon: <Icon fontSize="small">settings</Icon>,
-    route: "#", // Label only
-    collapse: [
-      {
-        type: "collapse",
-        name: "View Reputation (Ekoh)",
-        key: "view-reputation",
-        route: "/keenkonnect/user-reputation/view-reputation-ekoh",
-        component: <ViewReputation />,
-      },
-      {
-        type: "collapse",
-        name: "Manage Expertise Areas",
-        key: "manage-expertise",
-        route: "/keenkonnect/user-reputation/manage-expertise-areas",
-        component: <ManageExpertiseAreas />,
-      },
-      {
-        type: "collapse",
-        name: "Account & Preferences",
-        key: "account-preferences",
-        route: "/keenkonnect/user-reputation/account-preferences",
-        component: <AccountPreferences />,
-      },
-    ],
+    name: "Search & Filter Documents",
+    key: "search-filter-documents",
+    route: "/keenkonnect/knowledge/search-filter-documents",
+    component: <SearchFilterDocuments />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Upload New Document",
+    key: "upload-new-document",
+    route: "/keenkonnect/knowledge/upload-new-document",
+    component: <UploadNewDocument />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Document Management",
+    key: "document-management",
+    route: "/keenkonnect/knowledge/document-management",
+    component: <DocumentManagement />,
+    sidebar: true,
+  },
+  // AI Team Matching Group Label
+  {
+    type: "title",
+    title: "AI Team Matching",
+    key: "ai-team-matching-title",
+  },
+  // AI Team Matching Items
+  {
+    type: "collapse",
+    name: "Find Teams",
+    key: "find-teams",
+    route: "/keenkonnect/ai-team-matching/find-teams",
+    component: <FindTeams />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "My Matches",
+    key: "my-matches",
+    route: "/keenkonnect/ai-team-matching/my-matches",
+    component: <MyMatches />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Match Preferences",
+    key: "match-preferences",
+    route: "/keenkonnect/ai-team-matching/match-preferences",
+    component: <MatchPreferences />,
+    sidebar: true,
+  },
+  // Interactive Workspaces Group Label
+  {
+    type: "title",
+    title: "Interactive Workspaces",
+    key: "interactive-workspaces-title",
+  },
+  // Interactive Workspaces Items
+  {
+    type: "collapse",
+    name: "My Workspaces",
+    key: "my-workspaces",
+    route: "/keenkonnect/workspaces/my-workspaces",
+    component: <MyWorkspaces />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Browse Available Workspaces",
+    key: "browse-workspaces",
+    route: "/keenkonnect/workspaces/browse-available-workspaces",
+    component: <BrowseAvailableWorkspaces />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Launch New Workspace",
+    key: "launch-new-workspace",
+    route: "/keenkonnect/workspaces/launch-new-workspace",
+    component: <LaunchNewWorkspace />,
+    sidebar: true,
+  },
+  // Sustainability & Impact Group Label
+  {
+    type: "title",
+    title: "Sustainability & Impact",
+    key: "sustainability-impact-title",
+  },
+  // Sustainability & Impact Items
+  {
+    type: "collapse",
+    name: "Track Project Impact",
+    key: "track-project-impact",
+    route: "/keenkonnect/sustainability-impact/track-project-impact",
+    component: <TrackProjectImpact />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Sustainability Dashboard",
+    key: "sustainability-dashboard",
+    route: "/keenkonnect/sustainability-impact/sustainability-dashboard",
+    component: <SustainabilityDashboard />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Submit Impact Reports",
+    key: "submit-impact-reports",
+    route: "/keenkonnect/sustainability-impact/submit-impact-reports",
+    component: <SubmitImpactReports />,
+    sidebar: true,
+  },
+  // User Reputation & Settings Group Label
+  {
+    type: "title",
+    title: "User Reputation & Settings",
+    key: "user-reputation-settings-title",
+  },
+  // User Reputation & Settings Items
+  {
+    type: "collapse",
+    name: "View Reputation (Ekoh)",
+    key: "view-reputation",
+    route: "/keenkonnect/user-reputation/view-reputation-ekoh",
+    component: <ViewReputation />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Manage Expertise Areas",
+    key: "manage-expertise",
+    route: "/keenkonnect/user-reputation/manage-expertise-areas",
+    component: <ManageExpertiseAreas />,
+    sidebar: true,
+  },
+  {
+    type: "collapse",
+    name: "Account & Preferences",
+    key: "account-preferences",
+    route: "/keenkonnect/user-reputation/account-preferences",
+    component: <AccountPreferences />,
     sidebar: true,
   },
 ];
